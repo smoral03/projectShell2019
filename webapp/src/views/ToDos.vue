@@ -51,6 +51,7 @@ export default {
   },
   methods: {
     onSubmit () {
+      debugger;
       this.$store.dispatch('addToDo', this.newTodo).then(() => {
         this.newTodo.title = null;
       })

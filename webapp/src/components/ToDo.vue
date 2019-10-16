@@ -3,6 +3,7 @@
     <b-checkbox v-model="todo.done" />
     <span class="todo-title">
       {{ todo.title }}
+      <b-button v-on:click="onDelete" type="is-danger" size="is-small" rounded = "true" outlined>Delete</b-button>
     </span>
   </div>
 </template>
@@ -16,6 +17,12 @@ export default {
       default: () => {
         return {};
       }
+    }
+  },
+  methods: {
+    onDelete () {
+      debugger;
+      this.$store.dispatch('dToDo', this.todo.id)
     }
   }
 };
