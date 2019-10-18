@@ -38,6 +38,14 @@ export default new Vuex.Store({
           break;
         }
       }
+    },
+    dDone(state, todoV) {
+      for(var i = 0; i < state.todos.length; i++){
+        if(state.todos[i].id == todoV.id){
+          state.todos[i].done = todoV.done;
+          break;
+        }
+      }
     }
   },
   actions: {
@@ -48,6 +56,10 @@ export default new Vuex.Store({
     dToDo({ commit }, toDo) {
       debugger;
       commit("dToDo", toDo);
+    },
+    dDone({ commit }, toDo) {
+      debugger;
+      commit("dDone", toDo);
     }
   }
 });
