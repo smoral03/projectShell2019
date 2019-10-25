@@ -2,11 +2,14 @@
   <div id="app">
     <b-navbar class="nav">
       <template slot="brand">
-        <router-link class="navbar-item" to="/" exact>ExampleApp</router-link>
+        <router-link class="navbar-item" to="/" exact>
+          ExampleApp
+        </router-link>
       </template>
       <template slot="start">
         <router-link class="navbar-item" to="/" exact>Home</router-link>
         <router-link class="navbar-item" to="/about" exact>About</router-link>
+        <router-link class="navbar-item" to="/todos" exact>ToDos</router-link>
       </template>
       <template slot="end">
         <div class="navbar-item">
@@ -54,8 +57,13 @@ export default {
   },
   methods: {
     logout: function() {
-      this.$store.dispatch("logout");
+      this.$store.dispatch("logout").then(() => {
+        return this.$router.push("/");
+      });
     }
+  },
+  mounted: function() {
+    this.$store.dispatch("checkLoggedIn");
   }
 };
 </script>
