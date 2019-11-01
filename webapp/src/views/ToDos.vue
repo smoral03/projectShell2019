@@ -33,6 +33,8 @@
 <script>
 import ToDo from "@/components/ToDo.vue";
 export default {
+  
+
   name: "ToDos",
   data: function() {
     return {
@@ -61,7 +63,8 @@ export default {
       // if we are not logged in redirect home
       this.$router.push("/");
     })
-  }
+  },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>
